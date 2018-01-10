@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch Option 监控数据</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>watch选项 监控数据</h1>
+<hr>
+<div id="app">
+    <p>今日温度：{{temperature}}</p>
+    <p>穿衣建议：{{chuanyi}}</p>
+    <button @click="add">升温</button>
+    <button @click="reduce">降温</button>
+</div>
+<script type="text/javascript">
+    var chuanyi_arr=['T恤短袖','夹克长裙','棉衣羽绒服'];
+
+    var app = new Vue({
+        el: '#app',
+        data:{
+            temperature:14,
+            chuanyi:'夹克长裙'
+        },
+        methods:{
+            add:function () {
+                this.temperature+=5;
+            },
+            reduce:function () {
+                this.temperature-=5;
+            }
+        },
+//        watch:{
+//            temperature:function (newVal,oldVal) {
+//                if (newVal>=26){
+//                    this.chuanyi=chuanyi_arr[0];
+//                }else if (newVal<26 && newVal>0){
+//                    this.chuanyi=chuanyi_arr[1];
+//                }else {
+//                    this.chuanyi=chuanyi_arr[2];
+//                }
+//            }
+//        }
+    })
+    app.$watch('temperature',function (newVal, oldVal) {
+        if (newVal>=26){
+            this.chuanyi=chuanyi_arr[0];
+        }else if (newVal<26 && newVal>0){
+            this.chuanyi=chuanyi_arr[1];
+        }else {
+            this.chuanyi=chuanyi_arr[2];
+        }
+    })
+</script>
+</body>
+</html>

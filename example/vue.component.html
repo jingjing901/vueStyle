@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-1</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>component-1</h1>
+<hr>
+<div id="app">
+    {{message}}
+    <gengyujing></gengyujing>
+    <jingjing></jingjing>
+</div>
+<div id="abb">
+    {{message}}
+    <gengyujing></gengyujing>
+    <!--组件注册的是一个标签，而指令注册的是已有标签里的一个属性。在实际开发中我们还是用组件比较多，指令用的比较少。-->
+</div>
+<script type="text/javascript">
+    Vue.component("gengyujing",{
+        template:`<div style="color: #ff2b10">你好，我是全局组件！</div>`
+    })
+    var app = new Vue({
+        el: '#app',
+        data:{
+            message:"hello world!"
+        },
+        components: {
+            "jingjing": {
+                template: `<div style="color: green">你好，我是局部组件！</div>`
+
+            }
+        }
+    })
+    var abb = new Vue({
+        el: '#abb',
+        data:{
+            message:"hello world!"
+        },
+
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.set </title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+<h1>vue.set </h1>
+<hr>
+<div id="app">
+    {{count}}
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+</div>
+<p><button onclick="add()">ADD</button></p>
+<script type="text/javascript">
+    function add() {
+//        用Vue.set改变
+//        Vue.set(outdata,'count',2);
+//        用Vue对象的方法添加
+       // app.count++;
+//        直接操作外部数据
+//        outdata.count++;
+//        app.arr[1]='ddd';
+        Vue.set(app.arr,1,'ddd');
+//         Vue.set对数组比较有效，能够检测到
+
+//   由于Javascript的限制，Vue不能自动检测以下变动的数组。
+//
+//    *当你利用索引直接设置一个项时，vue不会为我们自动更新。
+//
+//    *当你修改数组的长度时，vue不会为我们自动更新。
+    }
+    var outdata = {
+        count:1,
+//        goods:'car'
+        arr:['aaa','bbb','ccc']
+    }
+    var app = new Vue({
+        el: '#app',
+        data:outdata
+    })
+</script>
+</body>
+</html>

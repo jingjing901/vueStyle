@@ -54,10 +54,6 @@
               <option name="myItemId" value="vueStudy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vueStyle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -81,12 +77,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516764484468</updated>
-      <workItem from="1516764486171" duration="503000" />
+      <workItem from="1516764486171" duration="655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="503000" />
+    <option name="totallyTimeSpent" value="655000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1115" y="196" width="1350" height="1074" extended-state="0" />
